@@ -3,11 +3,11 @@ pipeline {
     tools {nodejs "nodejs"}
     stages {
       
-      stage('NPM Build') {
+      stage('NPM and NG Build') {
         steps {
           sh '''
           npm install
-          npm build
+          ng build
           '''     
         }
       } 
