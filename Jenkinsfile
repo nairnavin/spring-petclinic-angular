@@ -30,21 +30,21 @@ pipeline {
             }
         }
 
-      // stage ('Upload file') {
-      //       steps {
-      //           rtUpload (
-      //               serverId: "artifactory-server",
-      //               spec: """{
-      //                       "files": [
-      //                               {
-      //                                   "pattern": "target/*.jar",
-      //                                   "target": "Spring-Petclinic-Rest-Local"
-      //                               }
-      //                           ]
-      //                       }"""
-      //           )
-      //       }
-      //   }
+      stage ('Upload file') {
+            steps {
+                rtUpload (
+                    serverId: "artifactory-server",
+                    spec: """{
+                            "files": [
+                                    {
+                                        "pattern": "dist/*.zip",
+                                        "target": "Spring-Petclinic-Angular-Local"
+                                    }
+                                ]
+                            }"""
+                )
+            }
+        }
 
 
       
