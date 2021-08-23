@@ -6,8 +6,10 @@ pipeline {
       stage('NPM and NG Build') {
         steps {
           sh '''
+          npm version
           npm install
-          ng build
+          npm install -g @angular/core@8 @angular/cli@8
+          ng version
           '''     
         }
       } 
