@@ -9,7 +9,7 @@ pipeline {
           npm version
           npm install
           npm install -g @angular/core@8 @angular/cli@8
-          ng version
+          ng build
           '''     
         }
       } 
