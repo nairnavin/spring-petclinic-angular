@@ -1,13 +1,12 @@
 pipeline {
     agent any
-    tools {maven "maven"}
+    tools {nodejs "nodejs"}
     stages {
       
-      stage('Maven Build ') {
+      stage('NPM Build') {
         steps {
           sh '''
-          ./mvnw clean
-          ./mvnw install
+          npm install
           '''     
         }
       } 
@@ -20,31 +19,23 @@ pipeline {
             }
         }
 
-      stage ('Upload file') {
-            steps {
-                rtUpload (
-                    serverId: "artifactory-server",
-                    spec: """{
-                            "files": [
-                                    {
-                                        "pattern": "target/*.jar",
-                                        "target": "Spring-Petclinic-Rest-Local"
-                                    }
-                                ]
-                            }"""
-                )
-            }
-        }
+      // stage ('Upload file') {
+      //       steps {
+      //           rtUpload (
+      //               serverId: "artifactory-server",
+      //               spec: """{
+      //                       "files": [
+      //                               {
+      //                                   "pattern": "target/*.jar",
+      //                                   "target": "Spring-Petclinic-Rest-Local"
+      //                               }
+      //                           ]
+      //                       }"""
+      //           )
+      //       }
+      //   }
 
-/*
-      stage('Approval') {
-        steps {
-          script {
-            def userInput = input(id: 'confirm', message: 'Apply Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Apply terraform', name: 'confirm'] ])
-          }
-        }
-      }
-*/
+
       
     }
 }
