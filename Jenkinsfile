@@ -19,7 +19,7 @@ pipeline {
           cd dist/
           zip petclinic-web-${BUILD_NUMBER}.zip *
           '''  
-          ARTIFACT_ANGULAR=petclinic-web-${BUILD_NUMBER}.zip 
+          export ARTIFACT_ANGULAR=petclinic-web-${BUILD_NUMBER}.zip 
           echo "${ARTIFACT_ANGULAR}"   
         }
       } 
