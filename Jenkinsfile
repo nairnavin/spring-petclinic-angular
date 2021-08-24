@@ -17,9 +17,10 @@ pipeline {
         steps {
           sh '''
           cd dist/
-          zip petclinic-web.zip *
-          mv petclinic-web.zip petclinic-web-${BUILD_NUMBER}.zip
-          '''     
+          zip petclinic-web-${BUILD_NUMBER}.zip *
+          ARTIFACT_ANGULAR=petclinic-web-${BUILD_NUMBER}.zip 
+          '''  
+          echo "${ARTIFACT_ANGULAR}"   
         }
       } 
 
