@@ -18,6 +18,7 @@ pipeline {
           sh '''
           cd dist/
           zip petclinic-web.zip *
+          mv petclinic-web.zip petclinic-web-${BUILD_NUMBER}.zip
           '''     
         }
       } 
