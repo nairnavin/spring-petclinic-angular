@@ -29,7 +29,6 @@ pipeline {
                 rtPublishBuildInfo (
                     serverId: "artifactory-server"
                 )
-                sh "echo ${ARTIFACT_ANGULAR}"
             }
         }
 
@@ -49,6 +48,12 @@ pipeline {
             }
         }
 
+      post { 
+        success { 
+            echo 'Job is success and triggering another pipeline'
+            build job: 'Nomad-Job-Arun' //parameters: [[$class: 'StringParameterValue', name: 'systemname', value: systemname]]
+        }
+    }
 
       
     }
