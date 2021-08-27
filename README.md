@@ -1,5 +1,12 @@
 # Spring Petclinic Angular [![Build Status](https://travis-ci.org/spring-petclinic/spring-petclinic-angular.png?branch=master)](https://travis-ci.org/spring-petclinic/spring-petclinic-angular/)
 
+
+## Front-end for practical nomad and consul tutorial
+
+This is a fork from the spring-petclinic repo and has been modified to support the rest api in the nomad cluster. The steps below are from the original repository in case you want to run it locally. If not, please use the instructions and steps from https://github.com/nairnavin/practical-nomad-consul
+
+The rest of the readme is not updated and can be ignored if using this repo to follow the practical nomad consul tutorial
+
 ## Angular frontend for Spring Petclinic
 
 Warning: **client only**. 
