@@ -51,7 +51,7 @@ pipeline {
     post { 
         success { 
             echo 'Job is success and triggering another pipeline'
-            build job: 'Nomad-Job-Arun' ,parameters: [string(name: 'ARTIFACT_ANGULAR', value: "petclinic-web-${BUILD_NUMBER}.zip")]
+            build job: 'practical-nomad-consul' ,parameters: [string(name: 'ARTIFACT_ANGULAR', value: "petclinic-web-${BUILD_NUMBER}.zip")]
         }
     }
 }
