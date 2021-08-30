@@ -8,8 +8,8 @@ pipeline {
           sh '''
           npm install
           npm install -g @angular/core@8 @angular/cli@8
-          ng build --prod --base-href=/petclinic/ --deploy-url=/petclinic/
-          #ng build --prod --base-href=/petclinic-telkomsel/ --deploy-url=/petclinic-telkomsel/
+          #ng build --prod --base-href=/petclinic/ --deploy-url=/petclinic/
+          ng build --prod --base-href=/petclinic-telkomsel/ --deploy-url=/petclinic-telkomsel/
           '''     
         }
       } 
