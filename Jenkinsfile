@@ -18,7 +18,7 @@ pipeline {
         steps {
           sh '''
           cd dist/
-          zip petclinic-web-${BUILD_NUMBER}.zip *
+          zip -r petclinic-web-${BUILD_NUMBER}.zip *
           export ARTIFACT_ANGULAR="petclinic-web-${BUILD_NUMBER}.zip" 
           '''  
            
